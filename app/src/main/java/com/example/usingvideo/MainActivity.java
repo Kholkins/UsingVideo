@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         videoView = (VideoView)findViewById(R.id.videoView);
-
+        videoView.setVideoPath("android.resource://"+getPackageName()+"/"+R.raw.vidos);
 
 
     }
