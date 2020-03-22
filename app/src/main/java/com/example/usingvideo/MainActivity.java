@@ -2,7 +2,7 @@ package com.example.usingvideo;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
-
+import android.net.Uri;
 import android.widget.MediaController;
 import android.os.Build;
 import android.os.Bundle;
@@ -17,12 +17,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        videoView = (VideoView)findViewById(R.id.videoView);
-        videoView.setVideoPath("android.resource://"+getPackageName()+"/"+R.raw.vidos);
+        //String videoSource = "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4";
 
-        MediaController mediaController = new MediaController(this);
-        mediaController.setAnchorView(videoView);
-        videoView.setMediaController(mediaController);
+        String videoSource = "android.resource://com.example.usingvideo/"+R.raw.vidos;
+
+        videoView = (VideoView)findViewById(R.id.videoView);
+
+        videoView.setVideoURI(Uri.parse(videoSource));
+        videoView.setMediaController(new MediaController(this));
 
         videoView.start();
 
