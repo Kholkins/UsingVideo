@@ -17,9 +17,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //String videoSource = "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4";
+        String videoSource = "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4";
 
-        String videoSource = "android.resource://com.example.usingvideo/"+R.raw.vidos;
+        //String videoSource = "android.resource://com.example.usingvideo/"+R.raw.vidos;
 
         videoView = (VideoView)findViewById(R.id.videoView);
 
